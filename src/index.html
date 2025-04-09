@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Popover Widget</title>
+    <style>
+      /* Общие стили для body, чтобы центрировать содержимое */
+      body {
+        display: flex;
+        justify-content: center; /* Горизонтальное центрирование */
+        align-items: center; /* Вертикальное центрирование */
+        height: 100vh; /* Занимает всю высоту окна */
+        margin: 0; /* Убираем отступы */
+        background-color: #f4f4f4; /* Цвет фона */
+      }
+
+      /* Общие стили для кнопки */
+      .btn {
+        padding: 10px 20px;
+        background-color: red;
+        color: white;
+        border-radius: 10px;
+        border: none;
+        cursor: pointer;
+        position: relative; /* Чтобы позиционирование popover было относительно кнопки */
+      }
+
+      /* Стиль для popover */
+      .popover {
+        position: absolute;
+        display: none; /* Скрываем поповер по умолчанию */
+        z-index: 1050;
+        width: 200px;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .popover-header {
+        font-weight: bold;
+        padding: 10px;
+        background-color: #f7f7f7;
+        border-bottom: 1px solid #ddd;
+      }
+
+      .popover-body {
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <button
+      type="button"
+      id="popoverButton"
+      class="btn btn-secondary"
+      data-toggle="popover"
+      data-placement="top"
+      data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."
+    >
+      Popover on top
+    </button>
+    <div id="popover" class="popover">
+      <div class="popover-header"></div>
+      <div class="popover-body"></div>
+    </div>
+
+    <!-- Здесь будет подключаться скрипт, собранный Webpack -->
+  </body>
+</html>
